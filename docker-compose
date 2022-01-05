@@ -1,0 +1,16 @@
+---
+version:3
+services:
+web:
+image:infracloudio/csvserver:latest
+ports:
+- 9393:9300
+volumes:
+- /opt/csvserver/pathFile:/csvserver/inputdata
+environment:
+- CSVSERVER_BORDER='Orange' 
+Prometheus:
+image:prom/prometheus:v2.22.0
+ports:
+- 9090:9090
+
